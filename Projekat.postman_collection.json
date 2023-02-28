@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "c12ab59c-5cdc-4720-a5d4-4a1ce28861fd",
+		"name": "Projekat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16381912"
+	},
+	"item": [
+		{
+			"name": "createEmployee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"firstname\": \"Gio\",\n        \"lastname\":\"Test\",\n        \"startDate\":\"2022-12-20\",\n        \"position\": \"intern\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/EmployeeManagment/api/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"EmployeeManagment",
+						"api",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findAllEmployees",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "updateEmployee",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\" : 1,\n        \"firstname\": \"UpdateTest\",\n        \"lastname\":\"UTest\",\n        \"startDate\":\"2022-12-20\",\n        \"position\": \"ntern\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findById",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "addExperience",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"employeeId\":2,\n    \"company\":{\n        \"name\":\"synergy\"\n    },\n    \"start\": \"2010-12-10\",\n    \"end\": \"2013-12-22\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/EmployeeManagment/api/employee/experience",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"EmployeeManagment",
+						"api",
+						"employee",
+						"experience"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
