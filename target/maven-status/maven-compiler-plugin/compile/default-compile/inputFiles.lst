@@ -1,0 +1,13 @@
+/Users/synergy/Projekti/EmployeeManagment/src/main/java/com/synergysuite/services/EmployeeEJB.java
+/Users/synergy/Projekti/EmployeeManagment/src/main/java/com/synergysuite/entities/Company.java
+/Users/synergy/Projekti/EmployeeManagment/src/main/java/com/synergysuite/services/CompanyEJB.java
+/Users/synergy/Projekti/EmployeeManagment/src/main/java/com/synergysuite/database/DatabaseProducer.java
+/Users/synergy/Projekti/EmployeeManagment/src/main/java/com/synergysuite/interfaces/EmployeeCompanyEJBRemote.java
+/Users/synergy/Projekti/EmployeeManagment/src/main/java/com/synergysuite/database/DatabasePopulator.java
+/Users/synergy/Projekti/EmployeeManagment/src/main/java/com/synergysuite/interfaces/CompanyEJBRemote.java
+/Users/synergy/Projekti/EmployeeManagment/src/main/java/com/synergysuite/RestActivator.java
+/Users/synergy/Projekti/EmployeeManagment/src/main/java/com/synergysuite/controllers/HelloWorldController.java
+/Users/synergy/Projekti/EmployeeManagment/src/main/java/com/synergysuite/interfaces/EmployeeEJBRemote.java
+/Users/synergy/Projekti/EmployeeManagment/src/main/java/com/synergysuite/entities/EmployeeCompany.java
+/Users/synergy/Projekti/EmployeeManagment/src/main/java/com/synergysuite/entities/Employee.java
+/Users/synergy/Projekti/EmployeeManagment/src/main/java/com/synergysuite/services/EmployeeCompanyEJB.java
