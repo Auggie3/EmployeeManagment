@@ -10,20 +10,21 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-import static com.synergysuite.entities.Employee.FIND_ALL;
-import static com.synergysuite.entities.Employee.FIND_BY_NAME;
+import static com.synergysuite.entities.Employee.*;
 
 @Entity
 @NamedQueries({
         @NamedQuery(name = FIND_ALL, query = "select e from Employee e"),
         @NamedQuery(name = FIND_BY_NAME, query = "select e from Employee e" +
                 " where e.firstname = :fname" +
-                " and e.lastname = :lname")
+                " and e.lastname = :lname"),
+        @NamedQuery(name = DELETE_EMPLOYEE, query = "delete from Employee e where e.id = :id")
 })
 public class Employee implements Serializable {
 
     public static final String FIND_ALL = "Employee.findAll";
     public static final String FIND_BY_NAME = "Employee.findByName";
+    public static final String DELETE_EMPLOYEE = "Employee.deleteEmployee";
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -38,7 +39,7 @@ public class Employee implements Serializable {
     @NotNull
     @Column(nullable = false)
     private String position;
-    @OneToMany(mappedBy = "employee",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "employee",fetch = FetchType.EAGER, orphanRemoval = true)
     @JsonManagedReference
     private List<EmployeeCompany> pastExperiences;
 

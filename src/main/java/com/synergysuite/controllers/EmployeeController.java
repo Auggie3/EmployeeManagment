@@ -43,11 +43,9 @@ public class EmployeeController {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response createEmployee( Employee employee, @Context UriInfo uriInfo){
+    public Response createEmployee( Employee employee){
         Integer employeeId = employeeEJB.createEmployee(employee).getId();
-        UriBuilder uriBuilder = uriInfo.getAbsolutePathBuilder();
-        uriBuilder.path(Integer.toString(employeeId));
-        return Response.created(uriBuilder.build()).build();
+        return Response.ok(employeeId).build();
     }
 
 
@@ -61,7 +59,7 @@ public class EmployeeController {
     @DELETE
     @Path("{id}")
     public void deleteEmployee(@PathParam("id") Integer id){
-        employeeEJB.deleteEmployee(employeeEJB.findEmployeeById(id));
+        employeeEJB.deleteEmployee(id);
         Response.ok().build();
     }
 

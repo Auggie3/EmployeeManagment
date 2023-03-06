@@ -13,5 +13,5 @@ public interface EmployeeEJBRemote {
     List<Employee> findEmployeeByName(@NotNull String fname, @NotNull String lname);
     @NotNull Employee createEmployee(@NotNull Employee employee);
     @NotNull Employee updateEmployee(@NotNull Employee employee);
-    void deleteEmployee(@NotNull Employee employee);
+    void deleteEmployee(@NotNull Integer id);
 }

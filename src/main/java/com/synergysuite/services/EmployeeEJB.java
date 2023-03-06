@@ -54,8 +54,10 @@ public class EmployeeEJB implements EmployeeEJBRemote {
     }
 
     @Override
-    public void deleteEmployee(@NotNull Employee employee) {
-        em.remove(employee);
+    public void deleteEmployee(@NotNull Integer id) {
+        em.createNamedQuery(Employee.DELETE_EMPLOYEE)
+                .setParameter("id",id)
+                .executeUpdate();
     }
 
 }
