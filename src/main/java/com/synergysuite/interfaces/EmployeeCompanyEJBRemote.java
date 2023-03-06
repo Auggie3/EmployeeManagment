@@ -8,4 +8,5 @@ import jakarta.validation.constraints.NotNull;
 @Remote
 public interface EmployeeCompanyEJBRemote {
     @NotNull EmployeeCompany createEmployeeCompany(@NotNull EmployeeCompany ec);
+    void deleteEmployeeCompany(@NotNull Integer id);
 }

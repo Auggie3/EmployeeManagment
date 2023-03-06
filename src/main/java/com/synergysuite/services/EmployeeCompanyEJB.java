@@ -21,4 +21,11 @@ public class EmployeeCompanyEJB implements EmployeeCompanyEJBRemote {
         em.persist(ec);
         return ec;
     }
+
+    @Override
+    public void deleteEmployeeCompany(Integer id) {
+        em.createNamedQuery(EmployeeCompany.DELETE_EXPERIENCE)
+                .setParameter("id",id)
+                .executeUpdate();
+    }
 }

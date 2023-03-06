@@ -10,7 +10,12 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
+@NamedQuery(name = EmployeeCompany.DELETE_EXPERIENCE,
+        query = "delete from EmployeeCompany e where e.id=:id")
 public class EmployeeCompany implements Serializable {
+
+    public static final String DELETE_EXPERIENCE = "EmployeeCompany.delete";
+
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @NotNull
@@ -19,7 +24,7 @@ public class EmployeeCompany implements Serializable {
     @JsonBackReference
     private Employee employee;
     @NotNull
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     @JoinColumn(name = "company_id")
     private Company company;
     @NotNull

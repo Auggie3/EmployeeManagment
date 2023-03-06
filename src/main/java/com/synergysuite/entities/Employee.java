@@ -33,7 +33,7 @@ public class Employee implements Serializable {
     private String firstname;
     private String lastname;
     @Temporal(TemporalType.DATE)
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "Europe/Belgrade")
     private Date startDate;
     @NotNull
     @Column(nullable = false)

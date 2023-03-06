@@ -69,13 +69,11 @@ public class EmployeeController {
     @Path("experience")
     public void addExperience(PastExperienceDTO experienceDTO){
 
-        System.out.println("experienceDTO: "+ experienceDTO);
-
         Company c;
-        if(companyEJB.findCompanyByName(experienceDTO.getCompany().getName())==null) {
-            c = companyEJB.createCompany(experienceDTO.getCompany());
+        if(companyEJB.findCompanyByName(experienceDTO.getCompanyName())==null) {
+            c = companyEJB.createCompany(new Company(experienceDTO.getCompanyName()));
         }else{
-            c = companyEJB.findCompanyByName(experienceDTO.getCompany().getName());
+            c = companyEJB.findCompanyByName(experienceDTO.getCompanyName());
         }
 
         EmployeeCompany employeeCompany = new EmployeeCompany(employeeEJB.findEmployeeById(
@@ -88,4 +86,15 @@ public class EmployeeController {
 
         Response.ok().build();
     }
+
+
+    @DELETE
+    @Path("/experience/{id}")
+    public Response deleteExperience(@PathParam("id") Integer id){
+        employeeCompanyEJB.deleteEmployeeCompany(id);
+        return Response.ok().build();
+    }
+
+
+
 }

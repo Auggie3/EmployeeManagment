@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class PastExperienceDTO {
     Integer employeeId;
-    Company company;
+    String companyName;
     Date start;
     Date end;
 
@@ -15,9 +15,9 @@ public class PastExperienceDTO {
     public PastExperienceDTO() {
     }
 
-    public PastExperienceDTO(Integer employeeId, Company company, Date start, Date end) {
+    public PastExperienceDTO(Integer employeeId, String companyName, Date start, Date end) {
         this.employeeId = employeeId;
-        this.company = company;
+        this.companyName = companyName;
         this.start = start;
         this.end = end;
     }
@@ -31,12 +31,12 @@ public class PastExperienceDTO {
         this.employeeId = employeeId;
     }
 
-    public Company getCompany() {
-        return company;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public void setCompany(Company company) {
-        this.company = company;
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
     public Date getStart() {
@@ -59,7 +59,7 @@ public class PastExperienceDTO {
     public String toString() {
         return "PastExperienceDTO{" +
                 "employeeId=" + employeeId +
-                ", company=" + company +
+                ", company=" + companyName +
                 ", start=" + start +
                 ", end=" + end +
                 '}';
